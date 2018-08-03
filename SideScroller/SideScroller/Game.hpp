@@ -39,5 +39,5 @@ private:
 	bool mIsRunning;
 	bool mUpdatingActors;
 
-	class Ship* mShip;
+	class Player* mPlayer;
 };

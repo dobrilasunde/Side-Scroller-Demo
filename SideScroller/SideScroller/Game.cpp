@@ -3,7 +3,7 @@
 #include <algorithm>
 #include "Actor.hpp"
 #include "SpriteComponent.hpp"
-#include "Ship.hpp"
+#include "Player.hpp"
 #include "BGSpriteComponent.hpp"
 
 Game::Game() :mWindow(nullptr), mRenderer(nullptr), mIsRunning(true), mUpdatingActors(false) {}
@@ -45,9 +45,9 @@ bool Game::Initialize()
 
 void Game::LoadData()
 {
-	mShip = new Ship(this);
-	mShip->SetPosition(Vector2(100.0f, 384.0f));
-	mShip->SetScale(1.5f);
+	mPlayer = new Player(this);
+	mPlayer->SetPosition(Vector2(100.0f, 650.0f));
+	mPlayer->SetScale(1.5f);
 
 	Actor* temp = new Actor(this);
 	temp->SetPosition(Vector2(512.0f, 384.0f));
@@ -55,7 +55,7 @@ void Game::LoadData()
 	BGSpriteComponent* bg = new BGSpriteComponent(temp, 10);
 	bg->SetScreenSize(Vector2(1024.0f, 768.0f));
 	std::vector<SDL_Texture*> bgtexs = {
-		GetTexture("Assets/PNG/game_background_1/layers/sky.png"),
+		GetTexture("Assets/sky.png"),
 	};
 	bg->SetBGTextures(bgtexs);
 	bg->SetScrollSpeed(0.0f);
@@ -83,8 +83,8 @@ void Game::LoadData()
 	bg = new BGSpriteComponent(temp, 30);
 	bg->SetScreenSize(Vector2(1024.0f, 768.0f));
 	bgtexs = {
-		GetTexture("Assets/PNG/game_background_1/layers/rocks_1.png"),
-		GetTexture("Assets/PNG/game_background_1/layers/rocks_1.png")
+		GetTexture("Assets/rocks_1.png"),
+		GetTexture("Assets/rocks_1.png")
 	};
 
 	bg->SetBGTextures(bgtexs);
@@ -180,7 +180,7 @@ void Game::ProcessInput()
 		mIsRunning = false;
 	}
 
-	mShip->ProcessKeyboard(state);
+	mPlayer->ProcessKeyboard(state);
 	
 }
 

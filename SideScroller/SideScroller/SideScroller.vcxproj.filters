@@ -9,7 +9,7 @@
     <ClCompile Include="AnimSpriteComponent.cpp" />
     <ClCompile Include="BGSpriteComponent.cpp" />
     <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.hpp" />
@@ -19,6 +19,6 @@
     <ClInclude Include="SpriteComponent.hpp" />
     <ClInclude Include="AnimSpriteComponent.hpp" />
     <ClInclude Include="BGSpriteComponent.hpp" />
-    <ClInclude Include="Ship.hpp" />
+    <ClInclude Include="Player.hpp" />
   </ItemGroup>
 </Project>
