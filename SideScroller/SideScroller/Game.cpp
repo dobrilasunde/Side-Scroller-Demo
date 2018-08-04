@@ -5,6 +5,7 @@
 #include "SpriteComponent.hpp"
 #include "Player.hpp"
 #include "BGSpriteComponent.hpp"
+#include"TileMapComponent.hpp"
 
 Game::Game() :mWindow(nullptr), mRenderer(nullptr), mIsRunning(true), mUpdatingActors(false) {}
 
@@ -52,6 +53,26 @@ void Game::LoadData()
 	Actor* temp = new Actor(this);
 	temp->SetPosition(Vector2(512.0f, 384.0f));
 
+	TileMapComponent* tmc = new TileMapComponent(temp, 90);
+	tmc->LoadCSV("Assets/MapLayer1.csv");
+	SDL_Texture* tmpTex = GetTexture("Assets/Tiles.png");
+	tmc->SetScreenSize(Vector2(1024.0f, 768.0f));
+	tmc->SetTexture(tmpTex);
+	tmc->SetTileNumbers(8, 24);
+
+	TileMapComponent* tmc1 = new TileMapComponent(temp, 80);
+	tmc1->LoadCSV("Assets/MapLayer2.csv");
+	tmc1->SetScreenSize(Vector2(1024.0f, 768.0f));
+	tmc1->SetTexture(tmpTex);
+	tmc1->SetTileNumbers(8, 24);
+
+	TileMapComponent* tmc2 = new TileMapComponent(temp, 70);
+	tmc2->LoadCSV("Assets/MapLayer3.csv");
+	tmc2->SetScreenSize(Vector2(1024.0f, 768.0f));
+	tmc2->SetTexture(tmpTex);
+	tmc2->SetTileNumbers(8, 24);
+
+	/*
 	BGSpriteComponent* bg = new BGSpriteComponent(temp, 10);
 	bg->SetScreenSize(Vector2(1024.0f, 768.0f));
 	std::vector<SDL_Texture*> bgtexs = {
@@ -120,7 +141,7 @@ void Game::LoadData()
 	bg->SetBGTextures(bgtexs);
 	bg->SetScrollSpeed(-350.0f);
 
-
+*/
 }
 
 void Game::UnloadData()

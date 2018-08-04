@@ -10,6 +10,7 @@
     <ClCompile Include="BGSpriteComponent.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TileMapComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.hpp" />
@@ -20,5 +21,6 @@
     <ClInclude Include="AnimSpriteComponent.hpp" />
     <ClInclude Include="BGSpriteComponent.hpp" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="TileMapComponent.hpp" />
   </ItemGroup>
 </Project>

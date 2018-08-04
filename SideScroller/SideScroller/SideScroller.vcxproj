@@ -152,6 +152,7 @@
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="TileMapComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.hpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Math.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="SpriteComponent.hpp" />
+    <ClInclude Include="TileMapComponent.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
